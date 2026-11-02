@@ -1,8 +1,9 @@
-scores = list(map(float, input("Enter scores separated by spaces: ").split()))
+import sys
 
-total = sum(scores)
-average = total / len(scores)
+scores = [float(score) for score in sys.argv[1:]]
 
-print("Scores:", scores)
-print("Sum:", total)
-print("Average:", average)
+if not scores:
+    print("Enter scores after the program name.")
+else:
+    print("Sum:", sum(scores))
+    print("Average:", sum(scores) / len(scores))
